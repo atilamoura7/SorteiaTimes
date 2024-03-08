@@ -270,7 +270,7 @@ public class Sorteio
         }
     }
     public Time ultimoTime()
-    {   //refazer a lógica 
+    {   
         if(this.getTimesFormados()==(this.getTotalTimes()-1))
         {
             if(jogadoresDisponiveis()==4)
