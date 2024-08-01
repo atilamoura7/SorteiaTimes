@@ -1,11 +1,14 @@
 package model;
 
+import java.util.Scanner;
+
 public class Jogador
 {
     private String nome;
     private int estrelas;
     private int id; 
     private boolean disponivel;
+    Scanner sc;
     public Jogador(String nome, int estrelas, int id)
     {
         this.setNome(nome);
@@ -50,7 +53,7 @@ public class Jogador
     }
     public String toString()
     {
-        return "Nome: "+this.getNome()+", Estrelas: "+this.getEstrelas()+", Disponível: "+this.isDisponivel()+"\n";
+        return "\nId:"+this.getId()+", Nome: "+this.getNome()+", Estrelas: "+this.getEstrelas()+", Disponível: "+this.isDisponivel();
     }
 
     public boolean isDisponivel() {
@@ -59,6 +62,19 @@ public class Jogador
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+    
+    public void informacoesJogador()
+    {
+        sc = new Scanner(System.in);
+        System.out.println("==============================");
+        System.out.println("     Form        ");
+        System.out.println("Nome do jogador: ");
+        this.setNome(sc.next());
+        System.out.println("Número de estrelas do(a)"+this.getNome());
+        this.setEstrelas(sc.nextInt());
+        System.out.println("==============================");
+        //sc.close();
     }
     
 }

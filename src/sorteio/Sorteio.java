@@ -15,10 +15,59 @@ public class Sorteio
     {
       this.setTimesFormados(0);
       this.setTotalTimes(0);
+      criaLista();
+    }
+    public void criaLista()
+    {
+        System.out.println("Criou lista");
+        Jogador jogador1 = new Jogador("Moura", 1, 1);
+        Jogador jogador2 = new Jogador("Joe", 2, 2);
+        Jogador jogador3 = new Jogador("Bill", 3,3);
+        Jogador jogador4 = new Jogador("Bob", 4, 4);
+        Jogador jogador5 = new Jogador("Rick", 1, 5);
+        Jogador jogador6 = new Jogador("Pedro", 2,6);
+        Jogador jogador7 = new Jogador("Raul", 3, 7);
+        Jogador jogador8 = new Jogador("Biel", 4,8);
+        Jogador jogador9 = new Jogador("Saulo", 1,9);
+        Jogador jogador10 = new Jogador("Henri", 5,10);
+        this.adicionaJogador(jogador1);
+        this.adicionaJogador(jogador2);
+        this.adicionaJogador(jogador3);
+        this.adicionaJogador(jogador4);
+        this.adicionaJogador(jogador5);
+        this.adicionaJogador(jogador6);
+        this.adicionaJogador(jogador7);
+        this.adicionaJogador(jogador8);
+        this.adicionaJogador(jogador9);
+        this.adicionaJogador(jogador10);
+    }
+    public int numeroLista()
+    {
+        return listaJogadores.size();
     }
     public void adicionaJogador(Jogador jogador)
     {
         listaJogadores.add(jogador);
+    }
+    public void buscaJogador(int id)
+    {
+       for(int i = 0; i<listaJogadores.size(); i++)
+       {
+           if(listaJogadores.get(i).getId()== id)
+           {
+               System.out.println("passou");
+               removeJogador(i);
+               break;
+           }
+           else
+           {
+               System.out.println("Jogador não encontrado.");
+           }
+       }
+    }
+    public void removeJogador(int i)
+    {
+       listaJogadores.remove(i);
     }
 
     public ArrayList<Jogador> getListaJogadores() {
@@ -341,6 +390,16 @@ public class Sorteio
     {
         System.out.println("Times Formados: "+this.getTimesFormados());
         
+    }
+    public void opcoes()
+    {
+        System.out.println("==============================");
+        System.out.println("1- Cadastrar Jogador");
+        System.out.println("2- Remover Jogador");
+        System.out.println("3- Sortear times");
+        System.out.println("4- Ver Lista de jogadores");
+        System.out.println("5- Sair");
+        System.out.println("==============================");
     }
 }
  
